@@ -3,8 +3,12 @@ const app = express();
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const mongoose = require('mongoose');
-
+const cors = require('cors');
 require('dotenv/config');
+
+//enable cors
+app.use(cors());
+app.options('*',cors());
 
 //moiddleware
 app.use(bodyParser.json());
